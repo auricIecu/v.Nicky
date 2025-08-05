@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -36,6 +37,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'Home'});
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
+    
+    // Add listener to update send button opacity
+    _model.textController!.addListener(() {
+      setState(() {});
+    });
 
     animationsMap.addAll({
       'rowOnPageLoadAnimation': AnimationInfo(
@@ -133,12 +139,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
                 decoration: BoxDecoration(
                   color: Color(0xFF1a1a1a),
-                  border: Border(
-                    bottom: BorderSide(
-                      color: Color(0xFF2a2a2a),
-                      width: 1.0,
-                    ),
-                  ),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -147,25 +147,49 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                       padding: EdgeInsets.all(8.0),
                       child: Image.asset(
                         'assets/botones v1/Singo usuario.png',
-                        width: 24.0,
-                        height: 24.0,
+                        width: 34.5,
+                        height: 34.5,
                         fit: BoxFit.contain,
                       ),
                     ),
                     Text(
                       'Orito',
                       style: GoogleFonts.duruSans(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 28.75,
+                        fontWeight: FontWeight.w900,
                         color: Color(0xFFf7c61a),
+                        letterSpacing: 1.0,
+                        height: 1.0,
+                        shadows: [
+                          Shadow(
+                            offset: Offset(0.5, 0.5),
+                            color: Color(0xFFf7c61a),
+                            blurRadius: 0,
+                          ),
+                          Shadow(
+                            offset: Offset(-0.5, -0.5),
+                            color: Color(0xFFf7c61a),
+                            blurRadius: 0,
+                          ),
+                          Shadow(
+                            offset: Offset(0.5, -0.5),
+                            color: Color(0xFFf7c61a),
+                            blurRadius: 0,
+                          ),
+                          Shadow(
+                            offset: Offset(-0.5, 0.5),
+                            color: Color(0xFFf7c61a),
+                            blurRadius: 0,
+                          ),
+                        ],
                       ),
                     ),
                     Container(
                       padding: EdgeInsets.all(8.0),
                       child: Image.asset(
                         'assets/botones v1/Mensajes peer to peer.png',
-                        width: 24.0,
-                        height: 24.0,
+                        width: 34.5,
+                        height: 34.5,
                         fit: BoxFit.contain,
                       ),
                     ),
@@ -180,42 +204,17 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // Logo
-                      Image.asset(
-                        'assets/botones v1/Logo1.png',
-                        width: 120.0,
-                        height: 120.0,
-                        fit: BoxFit.contain,
+                      // Logo (blurred)
+                      ImageFiltered(
+                        imageFilter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
+                        child: Image.asset(
+                          'assets/botones v1/Logo1.png',
+                          width: 120.0,
+                          height: 120.0,
+                          fit: BoxFit.contain,
+                        ),
                       ),
                       SizedBox(height: 32.0),
-                      
-                      // Welcome Text
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 32.0),
-                        child: Text(
-                          'Inicio del saber',
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.duruSans(
-                            fontSize: 24.0,
-                            fontWeight: FontWeight.w300,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 16.0),
-                      
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 32.0),
-                        child: Text(
-                          'Pregunta algo para comenzar',
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.duruSans(
-                            fontSize: 16.0,
-                            color: Colors.white.withOpacity(0.7),
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -243,8 +242,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         padding: EdgeInsets.all(12.0),
                         child: Image.asset(
                           'assets/botones v1/Signo adjuntar.png',
-                          width: 20.0,
-                          height: 20.0,
+                          width: 31.0,
+                          height: 31.0,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -254,6 +253,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         child: TextFormField(
                           controller: _model.textController,
                           focusNode: _model.textFieldFocusNode,
+                          textAlign: TextAlign.center,
                           onFieldSubmitted: (_) async {
                             if (_model.textController.text.trim().isNotEmpty) {
                               // Create new chat and navigate
@@ -348,24 +348,26 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                       ),
                       
                       // Send button
-                      GestureDetector(
+                      Opacity(
+                        opacity: _model.textController.text.trim().isEmpty ? 0.3 : 1.0,
+                        child: GestureDetector(
                         onTap: () async {
                           if (_model.textController.text.trim().isNotEmpty) {
-                            // Same logic as onFieldSubmitted
-                            logFirebaseEvent('HOME_PAGE_Send_Button_ON_TAP');
-                            logFirebaseEvent('Send_Button_backend_call');
-                            var chatsRecordReference = ChatsRecord.collection.doc();
-                            await chatsRecordReference.set(createChatsRecordData(
+                          // Same logic as onFieldSubmitted
+                          logFirebaseEvent('HOME_PAGE_Send_Button_ON_TAP');
+                          logFirebaseEvent('Send_Button_backend_call');
+                          var chatsRecordReference = ChatsRecord.collection.doc();
+                          await chatsRecordReference.set(createChatsRecordData(
+                            uid: currentUserReference,
+                            timestamp: getCurrentTimestamp,
+                            title: _model.textController.text,
+                          ));
+                          _model.chatRef = ChatsRecord.getDocumentFromData(
+                            createChatsRecordData(
                               uid: currentUserReference,
                               timestamp: getCurrentTimestamp,
                               title: _model.textController.text,
-                            ));
-                            _model.chatRef = ChatsRecord.getDocumentFromData(
-                              createChatsRecordData(
-                                uid: currentUserReference,
-                                timestamp: getCurrentTimestamp,
-                                title: _model.textController.text,
-                              ),
+                            ),
                               chatsRecordReference,
                             );
                             logFirebaseEvent('Send_Button_backend_call');
@@ -427,11 +429,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           padding: EdgeInsets.all(12.0),
                           child: Image.asset(
                             'assets/botones v1/Signo enviar.png',
-                            width: 20.0,
-                            height: 20.0,
+                            width: 31.0,
+                            height: 31.0,
                             fit: BoxFit.contain,
                           ),
                         ),
+                      ),
                       ),
                     ],
                   ),
@@ -443,12 +446,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 decoration: BoxDecoration(
                   color: Color(0xFF1a1a1a),
-                  border: Border(
-                    top: BorderSide(
-                      color: Color(0xFF2a2a2a),
-                      width: 1.0,
-                    ),
-                  ),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -456,7 +453,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     _buildNavButton('assets/botones v1/Signo buscar.png', () {}),
                     _buildNavButton('assets/botones v1/Signo inventario.png', () {}),
                     _buildNavButton('assets/botones v1/Signo importaciones.png', () {}),
-                    _buildNavButton('assets/botones v1/Signo historial.png', () {}),
+                    _buildNavButton('assets/botones v1/Signo historial 2.png', () {}),
                   ],
                 ),
               ),
@@ -474,8 +471,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
         padding: EdgeInsets.all(12.0),
         child: Image.asset(
           assetPath,
-          width: 24.0,
-          height: 24.0,
+          width: 36.0,
+          height: 36.0,
           fit: BoxFit.contain,
         ),
       ),

@@ -1,0 +1,100 @@
+2025/08/05-02:34:24.573 ae220f Creating DB /private/var/folders/9d/njcmv3bs67bgg_6p6s5pyjsw0000gn/T/flutter_tools.a2hiFv/flutter_tools_chrome_device.oLm37I/Default/IndexedDB/http_localhost_56197.indexeddb.leveldb since it was missing.
+2025/08/05-02:34:24.576 ae220f Reusing MANIFEST /private/var/folders/9d/njcmv3bs67bgg_6p6s5pyjsw0000gn/T/flutter_tools.a2hiFv/flutter_tools_chrome_device.oLm37I/Default/IndexedDB/http_localhost_56197.indexeddb.leveldb/MANIFEST-000001
+2025/08/05-02:34:24.580 ae221c Level-0 table #5: started
+2025/08/05-02:34:24.581 ae221c Level-0 table #5: 1311 bytes OK
+2025/08/05-02:34:24.582 ae221c Delete type=0 #3
+2025/08/05-02:34:24.582 ae220f Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:34:25.861 ae220f Level-0 table #7: started
+2025/08/05-02:34:25.863 ae220f Level-0 table #7: 1996 bytes OK
+2025/08/05-02:34:25.864 ae220f Delete type=0 #4
+2025/08/05-02:34:25.864 ae220d Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:36:10.183 ae220f Compacting 1@1 + 1@2 files
+2025/08/05-02:36:10.186 ae220f Generated table #8@1: 38 keys, 1205 bytes
+2025/08/05-02:36:10.186 ae220f Compacted 1@1 + 1@2 files => 1205 bytes
+2025/08/05-02:36:10.189 ae220f compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/08/05-02:36:10.189 ae220f Delete type=2 #7
+2025/08/05-02:36:10.189 ae220f Delete type=2 #5
+2025/08/05-02:44:00.168 ae221b Level-0 table #10: started
+2025/08/05-02:44:00.171 ae221b Level-0 table #10: 5273 bytes OK
+2025/08/05-02:44:00.173 ae221b Delete type=0 #6
+2025/08/05-02:44:00.177 ae220f Manual compaction at level-0 from '\x00\x06\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:44:01.762 ae220d Manual compaction at level-0 from '\x00\x07\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x08\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:45:15.373 ae220f Compacting 1@1 + 1@2 files
+2025/08/05-02:45:15.379 ae220f Generated table #11@1: 55 keys, 3846 bytes
+2025/08/05-02:45:15.379 ae220f Compacted 1@1 + 1@2 files => 3846 bytes
+2025/08/05-02:45:15.384 ae220f compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/08/05-02:45:15.385 ae220f Delete type=2 #10
+2025/08/05-02:45:15.385 ae220f Delete type=2 #8
+2025/08/05-02:47:07.773 ae221b Level-0 table #13: started
+2025/08/05-02:47:07.780 ae221b Level-0 table #13: 7524 bytes OK
+2025/08/05-02:47:07.782 ae221b Delete type=0 #9
+2025/08/05-02:47:07.782 ae220d Manual compaction at level-0 from '\x00\x08\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x09\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:47:09.254 ae221b Manual compaction at level-0 from '\x00\x09\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0a\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:48:20.577 ae220f Compacting 1@1 + 1@2 files
+2025/08/05-02:48:20.581 ae220f Generated table #14@1: 55 keys, 3851 bytes
+2025/08/05-02:48:20.581 ae220f Compacted 1@1 + 1@2 files => 3851 bytes
+2025/08/05-02:48:20.582 ae220f compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/08/05-02:48:20.583 ae220f Delete type=2 #13
+2025/08/05-02:48:20.583 ae220f Delete type=2 #11
+2025/08/05-02:51:35.125 ae221b Level-0 table #16: started
+2025/08/05-02:51:35.133 ae221b Level-0 table #16: 7527 bytes OK
+2025/08/05-02:51:35.135 ae221b Delete type=0 #12
+2025/08/05-02:51:35.136 ae220d Manual compaction at level-0 from '\x00\x0a\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0b\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:51:36.685 ae221b Manual compaction at level-0 from '\x00\x0b\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0c\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:52:08.333 ae220f Level-0 table #18: started
+2025/08/05-02:52:08.338 ae220f Level-0 table #18: 7572 bytes OK
+2025/08/05-02:52:08.339 ae220f Delete type=0 #15
+2025/08/05-02:52:08.339 ae220d Manual compaction at level-0 from '\x00\x0c\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0d\x00\x00\x00' @ 0 : 0; will stop at '\x00\x0c\x00\x00\x05' @ 503 : 1
+2025/08/05-02:52:08.339 ae220d Compacting 1@0 + 1@1 files
+2025/08/05-02:52:08.339 ae220d Generated table #19@0: 64 keys, 3644 bytes
+2025/08/05-02:52:08.339 ae220d Compacted 1@0 + 1@1 files => 3644 bytes
+2025/08/05-02:52:08.339 ae220d compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/08/05-02:52:08.340 ae220d Delete type=2 #18
+2025/08/05-02:52:08.340 ae220d Manual compaction at level-0 from '\x00\x0c\x00\x00\x05' @ 503 : 1 .. '\x00\x0d\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:52:09.783 ae220d Level-0 table #21: started
+2025/08/05-02:52:09.784 ae220d Level-0 table #21: 3232 bytes OK
+2025/08/05-02:52:09.785 ae220d Delete type=0 #17
+2025/08/05-02:52:09.785 ae220d Delete type=2 #16
+2025/08/05-02:52:09.785 ae220d Manual compaction at level-0 from '\x00\x0d\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0e\x00\x00\x00' @ 0 : 0; will stop at '\x00\x0d\x00\x00\x05' @ 548 : 1
+2025/08/05-02:52:09.785 ae220d Compacting 1@0 + 1@1 files
+2025/08/05-02:52:09.786 ae220d Generated table #22@0: 73 keys, 3677 bytes
+2025/08/05-02:52:09.786 ae220d Compacted 1@0 + 1@1 files => 3677 bytes
+2025/08/05-02:52:09.786 ae220d compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/08/05-02:52:09.787 ae220d Delete type=2 #21
+2025/08/05-02:52:09.787 ae220d Manual compaction at level-0 from '\x00\x0d\x00\x00\x05' @ 548 : 1 .. '\x00\x0e\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:52:21.402 ae221b Manual compaction at level-0 from '\x00\x0e\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0f\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:52:22.828 ae221b Manual compaction at level-0 from '\x00\x0f\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x10\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:53:11.804 ae220f Compacting 1@1 + 1@2 files
+2025/08/05-02:53:11.807 ae220f Generated table #23@1: 51 keys, 3736 bytes
+2025/08/05-02:53:11.807 ae220f Compacted 1@1 + 1@2 files => 3736 bytes
+2025/08/05-02:53:11.812 ae220f compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/08/05-02:53:11.812 ae220f Delete type=2 #14
+2025/08/05-02:53:11.812 ae220f Delete type=2 #22
+2025/08/05-02:53:11.812 ae220f Delete type=2 #19
+2025/08/05-02:56:44.251 ae220d Level-0 table #25: started
+2025/08/05-02:56:44.257 ae220d Level-0 table #25: 8380 bytes OK
+2025/08/05-02:56:44.258 ae220d Delete type=0 #20
+2025/08/05-02:56:44.259 ae220f Manual compaction at level-0 from '\x00\x10\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x11\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:56:45.758 ae220d Manual compaction at level-0 from '\x00\x11\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x12\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:57:56.260 ae220f Compacting 1@1 + 1@2 files
+2025/08/05-02:57:56.265 ae220f Generated table #26@1: 55 keys, 3861 bytes
+2025/08/05-02:57:56.266 ae220f Compacted 1@1 + 1@2 files => 3861 bytes
+2025/08/05-02:57:56.269 ae220f compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/08/05-02:57:56.269 ae220f Delete type=2 #23
+2025/08/05-02:57:56.269 ae220f Delete type=2 #25
+2025/08/05-02:58:51.455 ae220f Manual compaction at level-0 from '\x00\x12\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x13\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-02:58:52.962 ae220d Manual compaction at level-0 from '\x00\x13\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x14\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-03:01:31.390 ae221b Level-0 table #28: started
+2025/08/05-03:01:31.397 ae221b Level-0 table #28: 11539 bytes OK
+2025/08/05-03:01:31.399 ae221b Delete type=0 #24
+2025/08/05-03:01:31.400 ae220d Manual compaction at level-0 from '\x00\x14\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x15\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/08/05-03:01:32.920 ae221b Level-0 table #30: started
+2025/08/05-03:01:32.926 ae221b Level-0 table #30: 3229 bytes OK
+2025/08/05-03:01:32.928 ae221b Delete type=0 #27
+2025/08/05-03:01:32.934 ae220d Manual compaction at level-0 from '\x00\x15\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x16\x00\x00\x00' @ 0 : 0; will stop at '\x00\x15\x00\x00\x05' @ 900 : 1
+2025/08/05-03:01:32.934 ae220d Compacting 1@0 + 1@1 files
+2025/08/05-03:01:32.937 ae220d Generated table #31@0: 73 keys, 3672 bytes
+2025/08/05-03:01:32.937 ae220d Compacted 1@0 + 1@1 files => 3672 bytes
+2025/08/05-03:01:32.941 ae220d compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/08/05-03:01:32.941 ae220d Delete type=2 #30
+2025/08/05-03:01:32.944 ae220d Manual compaction at level-0 from '\x00\x15\x00\x00\x05' @ 900 : 1 .. '\x00\x16\x00\x00\x00' @ 0 : 0; will stop at (end)

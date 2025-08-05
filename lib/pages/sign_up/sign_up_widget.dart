@@ -136,10 +136,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 font: GoogleFonts
-                                                                    .museoModerno(
+                                                                    .duruSans(
                                                                   fontWeight:
                                                                       FontWeight
-                                                                          .normal,
+                                                                          .w900,
                                                                   fontStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
@@ -150,14 +150,36 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                                     .secondary,
                                                                 fontSize: 40.0,
                                                                 letterSpacing:
-                                                                    0.0,
+                                                                    1.0,
                                                                 fontWeight:
                                                                     FontWeight
-                                                                        .normal,
+                                                                        .w900,
                                                                 fontStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
                                                                     .fontStyle,
+                                                                shadows: [
+                                                                  Shadow(
+                                                                    offset: Offset(1.0, 1.0),
+                                                                    color: FlutterFlowTheme.of(context).secondary,
+                                                                    blurRadius: 0,
+                                                                  ),
+                                                                  Shadow(
+                                                                    offset: Offset(-1.0, -1.0),
+                                                                    color: FlutterFlowTheme.of(context).secondary,
+                                                                    blurRadius: 0,
+                                                                  ),
+                                                                  Shadow(
+                                                                    offset: Offset(1.0, -1.0),
+                                                                    color: FlutterFlowTheme.of(context).secondary,
+                                                                    blurRadius: 0,
+                                                                  ),
+                                                                  Shadow(
+                                                                    offset: Offset(-1.0, 1.0),
+                                                                    color: FlutterFlowTheme.of(context).secondary,
+                                                                    blurRadius: 0,
+                                                                  ),
+                                                                ],
                                                               ),
                                                     ),
                                                     if (responsiveVisibility(

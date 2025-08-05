@@ -51,6 +51,11 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
 
     _model.promptTextController ??= TextEditingController();
     _model.promptFocusNode ??= FocusNode();
+    
+    // Add listener to update send button opacity
+    _model.promptTextController!.addListener(() {
+      setState(() {});
+    });
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation1': AnimationInfo(
@@ -105,8 +110,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
         padding: EdgeInsets.all(12.0),
         child: Image.asset(
           assetPath,
-          width: 24.0,
-          height: 24.0,
+          width: 36.0,
+          height: 36.0,
           fit: BoxFit.contain,
         ),
       ),
@@ -170,12 +175,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                     padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
                     decoration: BoxDecoration(
                       color: Color(0xFF1a1a1a),
-                      border: Border(
-                        bottom: BorderSide(
-                          color: Color(0xFF2a2a2a),
-                          width: 1.0,
-                        ),
-                      ),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -188,8 +187,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                             padding: EdgeInsets.all(8.0),
                             child: Image.asset(
                               'assets/botones v1/Singo usuario.png',
-                              width: 24.0,
-                              height: 24.0,
+                              width: 34.5,
+                              height: 34.5,
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -197,17 +196,41 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                         Text(
                           'Orito',
                           style: GoogleFonts.duruSans(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 28.75,
+                            fontWeight: FontWeight.w900,
                             color: Color(0xFFf7c61a),
+                            letterSpacing: 1.0,
+                            height: 1.0,
+                            shadows: [
+                              Shadow(
+                                offset: Offset(0.5, 0.5),
+                                color: Color(0xFFf7c61a),
+                                blurRadius: 0,
+                              ),
+                              Shadow(
+                                offset: Offset(-0.5, -0.5),
+                                color: Color(0xFFf7c61a),
+                                blurRadius: 0,
+                              ),
+                              Shadow(
+                                offset: Offset(0.5, -0.5),
+                                color: Color(0xFFf7c61a),
+                                blurRadius: 0,
+                              ),
+                              Shadow(
+                                offset: Offset(-0.5, 0.5),
+                                color: Color(0xFFf7c61a),
+                                blurRadius: 0,
+                              ),
+                            ],
                           ),
                         ),
                         Container(
                           padding: EdgeInsets.all(8.0),
                           child: Image.asset(
                             'assets/botones v1/Mensajes peer to peer.png',
-                            width: 24.0,
-                            height: 24.0,
+                            width: 34.5,
+                            height: 34.5,
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -325,8 +348,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                             padding: EdgeInsets.all(12.0),
                             child: Image.asset(
                               'assets/botones v1/Signo adjuntar.png',
-                              width: 20.0,
-                              height: 20.0,
+                              width: 31.0,
+                              height: 31.0,
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -336,6 +359,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                             child: TextFormField(
                               controller: _model.promptTextController,
                               focusNode: _model.promptFocusNode,
+                              textAlign: TextAlign.center,
                               onFieldSubmitted: (_) async {
                                 if (_model.promptTextController.text.trim().isNotEmpty) {
                                   // Handle message sending
@@ -475,8 +499,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                               padding: EdgeInsets.all(12.0),
                               child: Image.asset(
                                 'assets/botones v1/Signo enviar.png',
-                                width: 20.0,
-                                height: 20.0,
+                                width: 31.0,
+                                height: 31.0,
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -491,12 +515,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                     padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                     decoration: BoxDecoration(
                       color: Color(0xFF1a1a1a),
-                      border: Border(
-                        top: BorderSide(
-                          color: Color(0xFF2a2a2a),
-                          width: 1.0,
-                        ),
-                      ),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -504,7 +522,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                         _buildNavButton('assets/botones v1/Signo buscar.png', () {}),
                         _buildNavButton('assets/botones v1/Signo inventario.png', () {}),
                         _buildNavButton('assets/botones v1/Signo importaciones.png', () {}),
-                        _buildNavButton('assets/botones v1/Signo historial.png', () {
+                        _buildNavButton('assets/botones v1/Signo historial 2.png', () {
                           scaffoldKey.currentState?.openDrawer();
                         }),
                       ],
