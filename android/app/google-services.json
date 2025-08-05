@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "266163565560",
+    "project_id": "orito-gpahpe",
+    "storage_bucket": "orito-gpahpe.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266163565560:android:41136bd057486f4c741c0d",
+        "android_client_info": {
+          "package_name": "com.mycompany.googleedtechai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-DN_uuW6jfDHRfgYyb7j8vQYcvJBxFjo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
