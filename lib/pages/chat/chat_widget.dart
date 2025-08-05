@@ -437,71 +437,74 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                           ),
                           
                           // Send button
-                          GestureDetector(
-                            onTap: () async {
-                              if (_model.promptTextController.text.trim().isNotEmpty) {
-                                // Handle message sending - same logic as onFieldSubmitted
-                                logFirebaseEvent('CHAT_PAGE_Send_Button_ON_TAP');
-                                logFirebaseEvent('Send_Button_update_page_state');
-                                _model.promptText = _model.promptTextController.text;
-                                safeSetState(() {});
-                                logFirebaseEvent('Send_Button_backend_call');
+                          Opacity(
+                            opacity: _model.promptTextController.text.trim().isEmpty ? 0.3 : 1.0,
+                            child: GestureDetector(
+                              onTap: () async {
+                                if (_model.promptTextController.text.trim().isNotEmpty) {
+                                  // Handle message sending - same logic as onFieldSubmitted
+                                  logFirebaseEvent('CHAT_PAGE_Send_Button_ON_TAP');
+                                  logFirebaseEvent('Send_Button_update_page_state');
+                                  _model.promptText = _model.promptTextController.text;
+                                  safeSetState(() {});
+                                  logFirebaseEvent('Send_Button_backend_call');
 
-                                await MessagesRecord.createDoc(widget.chatRef!)
-                                    .set(createMessagesRecordData(
-                                  timestamp: getCurrentTimestamp,
-                                  firstMessage: false,
-                                  message: _model.promptTextController.text,
-                                  user: 'user',
-                                  uid: currentUserReference,
-                                ));
-                                logFirebaseEvent('Send_Button_clear_text_fields_pin_codes');
-                                safeSetState(() {
-                                  _model.promptTextController?.clear();
-                                });
-                                logFirebaseEvent('Send_Button_update_app_state');
-                                FFAppState().awaitingReply = true;
-                                safeSetState(() {});
-                                logFirebaseEvent('Send_Button_a_i_agent');
-                                await callAiAgent(
-                                  context: context,
-                                  prompt: valueOrDefault<String>(
-                                    _model.promptText,
-                                    'null',
-                                  ),
-                                  threadId: valueOrDefault<String>(
-                                    widget.chatRef?.id,
-                                    'null',
-                                  ),
-                                  agentCloudFunctionName: 'test',
-                                  provider: 'GOOGLE',
-                                  agentJson: "{\"status\":\"LIVE\",\"identifier\":{\"name\":\"test\",\"key\":\"a48q0\"},\"name\":\"Test\",\"description\":\"Asistente IA en Español llamado Orito IA\",\"aiModel\":{\"provider\":\"GOOGLE\",\"model\":\"gemini-2.5-pro\",\"parameters\":{\"temperature\":{\"inputValue\":1},\"maxTokens\":{\"inputValue\":32000},\"topP\":{\"inputValue\":0.95}},\"messages\":[{\"role\":\"SYSTEM\",\"text\":\"Asistente IA en Español llamado Orito IA\"}]},\"requestOptions\":{\"requestTypes\":[\"PLAINTEXT\"]},\"responseOptions\":{\"responseType\":\"PLAINTEXT\"}}",
-                                  responseType: 'PLAINTEXT',
-                                ).then((generatedText) {
-                                  safeSetState(() => _model.botMessage = generatedText);
-                                });
+                                  await MessagesRecord.createDoc(widget.chatRef!)
+                                      .set(createMessagesRecordData(
+                                    timestamp: getCurrentTimestamp,
+                                    firstMessage: false,
+                                    message: _model.promptTextController.text,
+                                    user: 'user',
+                                    uid: currentUserReference,
+                                  ));
+                                  logFirebaseEvent('Send_Button_clear_text_fields_pin_codes');
+                                  safeSetState(() {
+                                    _model.promptTextController?.clear();
+                                  });
+                                  logFirebaseEvent('Send_Button_update_app_state');
+                                  FFAppState().awaitingReply = true;
+                                  safeSetState(() {});
+                                  logFirebaseEvent('Send_Button_a_i_agent');
+                                  await callAiAgent(
+                                    context: context,
+                                    prompt: valueOrDefault<String>(
+                                      _model.promptText,
+                                      'null',
+                                    ),
+                                    threadId: valueOrDefault<String>(
+                                      widget.chatRef?.id,
+                                      'null',
+                                    ),
+                                    agentCloudFunctionName: 'test',
+                                    provider: 'GOOGLE',
+                                    agentJson: "{\"status\":\"LIVE\",\"identifier\":{\"name\":\"test\",\"key\":\"a48q0\"},\"name\":\"Test\",\"description\":\"Asistente IA en Español llamado Orito IA\",\"aiModel\":{\"provider\":\"GOOGLE\",\"model\":\"gemini-2.5-pro\",\"parameters\":{\"temperature\":{\"inputValue\":1},\"maxTokens\":{\"inputValue\":32000},\"topP\":{\"inputValue\":0.95}},\"messages\":[{\"role\":\"SYSTEM\",\"text\":\"Asistente IA en Español llamado Orito IA\"}]},\"requestOptions\":{\"requestTypes\":[\"PLAINTEXT\"]},\"responseOptions\":{\"responseType\":\"PLAINTEXT\"}}",
+                                    responseType: 'PLAINTEXT',
+                                  ).then((generatedText) {
+                                    safeSetState(() => _model.botMessage = generatedText);
+                                  });
 
-                                logFirebaseEvent('Send_Button_backend_call');
-                                await MessagesRecord.createDoc(widget.chatRef!)
-                                    .set(createMessagesRecordData(
-                                  timestamp: getCurrentTimestamp,
-                                  firstMessage: false,
-                                  message: _model.botMessage,
-                                  user: 'gpt',
-                                  uid: currentUserReference,
-                                ));
-                                logFirebaseEvent('Send_Button_update_app_state');
-                                FFAppState().awaitingReply = false;
-                                safeSetState(() {});
-                              }
-                            },
-                            child: Container(
-                              padding: EdgeInsets.all(12.0),
-                              child: Image.asset(
-                                'assets/botones v1/Signo enviar.png',
-                                width: 31.0,
-                                height: 31.0,
-                                fit: BoxFit.contain,
+                                  logFirebaseEvent('Send_Button_backend_call');
+                                  await MessagesRecord.createDoc(widget.chatRef!)
+                                      .set(createMessagesRecordData(
+                                    timestamp: getCurrentTimestamp,
+                                    firstMessage: false,
+                                    message: _model.botMessage,
+                                    user: 'gpt',
+                                    uid: currentUserReference,
+                                  ));
+                                  logFirebaseEvent('Send_Button_update_app_state');
+                                  FFAppState().awaitingReply = false;
+                                  safeSetState(() {});
+                                }
+                              },
+                              child: Container(
+                                padding: EdgeInsets.all(12.0),
+                                child: Image.asset(
+                                  'assets/botones v1/Signo enviar.png',
+                                  width: 31.0,
+                                  height: 31.0,
+                                  fit: BoxFit.contain,
+                                ),
                               ),
                             ),
                           ),
